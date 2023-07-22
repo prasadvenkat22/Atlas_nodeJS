@@ -1,0 +1,47 @@
+A)create dbs and collectoins dynamically 
+we cant atlas cli or apis since DBs dont exits
+--the other way is ream APIs -create the same thing node js /express js in demo.
+--this demo shows node.js API 
+- then DRJframwork with python 
+API(with tight relational 
+integrity)
+post:app
+http://localhost:3000/app
+  {
+    "AppName":"noede app one",
+    "AppID": 1
+    }--second db created dynamically
+  {
+    "AppName":"node app one",
+    "AppID": 2
+    }
+post:app
+http://localhost:3000/app
+  {
+    "AppName":"noede app one",
+    "AppID": 1
+    }
+
+1) connect uset to app via appid
+post:user
+post: http://localhost:3000/user
+{
+"name":"abc",
+"email": "test@test.com",
+"password":"test113",
+"AppID":1
+}
+--intercept user APPid and check with app before
+inserting if appid does not match raise exception
+2)
+---use JWT tokes to set your own validated to APIs
+--use middleware and async handlers to validate 
+aything sent and raise exception you want
+post: http://localhost:3000/api/users --register new user
+--token is genereted by API you can have AppID check if it is matches
+--and use any custom rules
+
+post: http://localhost:3000/api/users/login  - with jwt you get
+---user must have registered already
+post method: http://localhost:3000/api/users
+get: http://localhost:3000/api/users/me
